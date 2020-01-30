@@ -21,7 +21,7 @@ router.get("/", function (req,res) {
 //Will take the newly created burger and send it to the database based on the specifed route
 router.post("/api/burgers", function (req, res) {
     console.log(req.body);
-    burgers.create (["name", "eaten"], [req.body.name, req.body.eaten], function (result){
+    burgers.create (["name", "eaten", "vomit_amt"], [req.body.name, req.body.eaten, req.body.vomit_amt], function (result){
 
         //send back the id
         res.json({ id: result.inserId})

@@ -24,15 +24,25 @@ $(function() {
     $(".create-form").on("submit", function(event) {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
+
         
+      if($("#burger_name").val().trim() === '') {
+        $('.modal').modal('show');
+
+        //this line of code grabs the modal div and opens it
+        $("#myModal").modal('open');
+      }
+
       console.log($("#burger_name"));
       const newBurger= {
         name: $("#burger_name").val().trim(),
-        eaten: 0
+        eaten: 0,
+        vomit_amt: 0,
         // $("[name=eaten]:checked").val().trim()
-      };
+      }
+    
 
-      console.log(newBurger);
+    //   console.log(newBurger);
 
       // Send the POST request.
       $.ajax("/api/burgers", {
