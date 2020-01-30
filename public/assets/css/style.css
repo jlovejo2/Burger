@@ -1,0 +1,33 @@
+body html {
+    height:100%;
+}
+
+body {
+    background-color: rgba(255,0,0,.75) !important;
+}
+li {
+    padding: 5px;
+    margin: 5px;
+    background: #faebd7;
+  }
+  
+  .label {
+    font-weight: bold;
+  }
+  
+  .create-update-form {
+    padding: 5px;
+    margin: 5px;
+    background: aqua;
+  }
+  
+  .form-group {
+    margin-bottom: 5px;
+  }
+
+  img {
+      height: 150px;
+      border-radius: 10px;
+  }
+
+  

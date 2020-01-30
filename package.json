@@ -1,0 +1,25 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "App that allows users to create and then eat burgers on the site",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlovejo2/Burger.git"
+  },
+  "author": "James Lovejoy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jlovejo2/Burger/issues"
+  },
+  "homepage": "https://github.com/jlovejo2/Burger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.18.1"
+  }
+}
