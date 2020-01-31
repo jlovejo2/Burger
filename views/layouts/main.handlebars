@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Link to Style Sheet -->
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+    <!-- Boostrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <title>Burger Town</title>
+    <!-- Link to Jquery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Bootstrap Javascript Link -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
+    <!-- Link to Javascript file -->
+    <script src="/assets/js/burger.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row align-items-center m-5">
+            <div class="col">
+                <div class="row justify-content-center">
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <div class="modal fade" id="myModal">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">General Public Advisory</h4>
+                                        {{!-- <button type="button" class="close" data-dismiss="modal">&times;</button> --}}
+                                    </div>
+                                    <div class="modal-body">
+                                        Hey this is a restaurant, you got to order something! Please enter a burger into
+                                        text
+                                        box.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-6 text-center">
+                        <img src="/assets/images/burger_town.jpg"></img>
+                        <h2>Enter the burger you'd like to eat in area below!</h2>
+                    </div>
+
+                </div>
+
+                {{{ body }}}
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
