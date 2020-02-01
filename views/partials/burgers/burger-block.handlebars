@@ -1,3 +1,4 @@
+{{#unless vomit_amt}}
 <li>
 	{{name}}
 
@@ -5,5 +6,16 @@
 		{{#if eat}}EAT IT EAT IT!{{else}}I Don't feel so good!{{/if}}
 	</button>
 
-	<button class="delete-burger" data-id="{{this.id}}">Im going to digest this!</button>
 </li>
+{{/unless}}
+
+
+{{#if vomit_amt}}
+<li class="vomit-li">
+
+	{{name}}..........but soggy
+<br>
+<button class="delete-burger" data-id="{{this.id}}">eat it?? Are you sure??</button>
+
+</li>
+{{/if}}
