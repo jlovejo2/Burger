@@ -2,22 +2,22 @@
 //Document.ready function but for jquery
 $(function() {
 
+  //This code is declaring my sound variables that I will play() 
+  //in certain onclick functions
   const vomit_sound = $("#vomit_sound")[0];
   const eatSound = $("#eat_sound")[0];
 
-  // console.log(eatSound);
-  // console.log(audio);
- 
+    //This the beginning of the click event for the changing eaten status button 
     $(".change-eaten").on("click", function(event) {
-      console.log(">>>>>>>  begin change-eaten")
       const id = $(this).data("id");
       const newEaten = $(this).data("neweaten");
-        console.log($(this));
       const newEatenState = {
         eaten: newEaten,
       };
 
-      console.log(newEaten);
+      //This set of if statement runs the desired sound effect based on the eaten value
+      //The first time it changes the burger is being eaten
+      //The second time they change it they are "un-eating it"
       if(newEaten) {
         console.log("eat");
       eatSound.play();
@@ -25,7 +25,7 @@ $(function() {
         console.log("throw up");
         vomit_sound.play()
       }
-
+    
       // Send the PUT request.
       $.ajax("/api/burgers/" + id, {
         type: "PUT",
@@ -33,16 +33,17 @@ $(function() {
       }).then(
         function() {
           console.log("changed eaten to", newEaten);
-          // Reload the page to get the updated list
-          timeoutReload();
-        }
+         
+          //This is a function call that delays the reload of the page for the sound effect to finish
+          delayReload();
+      }
       );
     });
-  
+    
+    //This is the on click that starts the code to create a new burger
     $(".create-form").on("submit", function(event) {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
-
         
       if($("#burger_name").val().trim() === '') {
         $('.order').modal('show');
@@ -51,7 +52,6 @@ $(function() {
         $("#orderSomething").modal('open');
       }
 
-      console.log($("#burger_name"));
       const newBurger= {
         name: $("#burger_name").val().trim(),
         eaten: 0,
@@ -67,7 +67,7 @@ $(function() {
         function() {
           console.log("created new burger");
           // Reload the page to get the updated list
-          timeoutReload();
+          location.reload();
         }
       );
     });
@@ -104,6 +104,7 @@ $(function() {
     $("#gross").modal('open');
   }
 
-  function timeoutReload() {
-    setTimeout(location.reload(), 3000);
+function delayReload() {
+    setTimeout(function(){ location.reload()}, 4000);
   }
+
