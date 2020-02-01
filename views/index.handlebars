@@ -4,8 +4,10 @@
     <div class="col-sm-6 text-center">
         <ul>
             {{#each burgers}}
+            {{#unless vomit_amt}}
             {{#unless eaten}}
             {{> burgers/burger-block eat=true}}
+            {{/unless}}
             {{/unless}}
             {{/each}}
         </ul>
@@ -32,5 +34,16 @@
 
     <button type="submit">Add a burger</button>
 </form>
+</div>
+</div>
+<div class="row justify-content-center">
+<div class="col-6 text-center">
+        <ul class="vomit">
+            {{#each burgers}}
+            {{#if vomit_amt}}
+            {{> burgers/burger-block}}
+            {{/if}}
+            {{/each}}
+        </ul>
 </div>
 </div>

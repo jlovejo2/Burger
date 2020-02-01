@@ -13,6 +13,7 @@
     <title>Burger Town</title>
     <!-- Link to Jquery -->
     <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Bootstrap Javascript Link -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
         integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
@@ -28,7 +29,7 @@
                 <div class="row justify-content-center">
                     <div class="col-3"></div>
                     <div class="col-6">
-                        <div class="modal fade" id="myModal">
+                        <div class="modal fade order" id="orderSomething">
                             <div class="modal-dialog modal-sm">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -48,20 +49,51 @@
                         </div>
                     </div>
                     <div class="col-3"></div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-6 text-center">
-                        <img src="/assets/images/burger_town.jpg"></img>
-                        <h2>Enter the burger you'd like to eat in area below!</h2>
+                    <div class="row justify-content-center">
+                        <div class="col-3"></div>
+                        <div class="col-6">
+                            <div class="modal fade gross-delete" id="gross">
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">General Public Advisory</h4>
+                                            {{!-- <button type="button" class="close" data-dismiss="modal">&times;</button> --}}
+                                        </div>
+                                        <div class="modal-body">
+                                            That's gross! In good conscience we can't let you do that. Gonna have to
+                                            throw this out.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger delete-gross"
+                                                data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3"></div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-6 text-center">
+                            <img src="/assets/images/burger_town.jpg"></img>
+                            <h2>Enter the burger you'd like to eat in area below!</h2>
+                        </div>
                     </div>
 
+                    {{{ body }}}
+
                 </div>
-
-                {{{ body }}}
-
             </div>
-        </div>
-    </div>
+            <audio id="vomit_sound">
+               
+                <source src="/assets/audio/Puke Vomit Ralph-SoundBible.com-1087412619.mp3" type="audio/mpeg">
+                </source>
+            </audio>
+            <audio id="eat_sound">
+               
+                 <source id="eat_sound" src="/assets/audio/Eating-SoundBible.com-1470347575.mp3" type="audio/mpeg">
+                </source>
+            </audio>
 </body>
 
 </html>
